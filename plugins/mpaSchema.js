@@ -56,7 +56,7 @@ Vue.prototype.$mpaSchema = {
   get AndrewZigler() {
     return {
       '@id': 'AndrewZigler',
-      description: 'Andrew Zigler is the creator of MyPetAdoption.com',
+      description: 'Andrew Zigler is the creator of My Pet Adoption.',
       email: 'me@andrewzigler.com',
       familyName: 'Zigler',
       givenName: 'Andrew',
