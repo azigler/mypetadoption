@@ -17,7 +17,7 @@ export default {
       {
         name: 'og:image',
         hid: 'og:image',
-        content: 'https://www.mypetadoption.com/ogmediablack.png'
+        content: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png'
       },
       {
         name: 'twitter:card',
@@ -27,7 +27,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'My Pet Adoption is under construction.'
+        content: 'Pet adoption and resource website.'
       }
     ]
   },

@@ -23,7 +23,7 @@ export default {
     return this.$mpaMeta.getBaseHead(
       'Under Construction',
       'My Pet Adoption',
-      'Pet adoption and resource website.',
+      'MyPetAdoption.com, an upcoming pet adoption and resource website, is under construction.',
       'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
       'https://pensive-fermat-55a1e3.netlify.com/'
     )
@@ -33,7 +33,8 @@ export default {
     return {
       webPageSchema: {
         ...{
-          description: 'MyPetAdoption.com is under construction.',
+          description:
+            'MyPetAdoption.com, an upcoming pet adoption and resource website, is under construction.',
           headline: 'Under Construction',
           image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
           name: 'Under Construction',
