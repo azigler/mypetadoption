@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@andrewzigler/head-helper": "^1.0.5",
+    "@andrewzigler/head-helper": "^1.0.6",
     "@andrewzigler/structured-data": "^1.1.6",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/feed": "^1.1.0",
