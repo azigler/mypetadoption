@@ -8,7 +8,6 @@ Vue.prototype.$mpaSchema = {
       webSiteSchema: this.webSiteSchema,
       AndrewZigler: this.AndrewZigler,
       AndrewZiglerSchema: this.AndrewZiglerSchema,
-
       webPage: this.webPage,
       webPageSchema: this.webPageSchema
     }
@@ -37,11 +36,12 @@ Vue.prototype.$mpaSchema = {
       creator: this.AndrewZiglerSchema,
       description: 'Pet adoption and resource website.',
       headline: 'My Pet Adoption',
-      image: 'FIX_ME',
+      image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
       mainEntity: this.AndrewZiglerSchema,
       name: 'Andrew Zigler',
-      thumbnailUrl: 'SAME_AS_FIX_ME',
-      url: 'https://www.mypetadoption.com/'
+      thumbnailUrl:
+        'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+      url: 'https://pensive-fermat-55a1e3.netlify.com/'
     }
   },
 
@@ -53,7 +53,7 @@ Vue.prototype.$mpaSchema = {
   ANDREW ZIGLER (PERSON)
   ------
   N/A
-*/
+  */
   get AndrewZigler() {
     return {
       '@id': 'AndrewZigler',
@@ -82,7 +82,7 @@ Vue.prototype.$mpaSchema = {
   name: 'TITLE FROM PAGE',
   thumbnailUrl: 'URL',
   url: 'URL FROM PAGE'
-*/
+  */
   get webPage() {
     return {
       '@id': 'webpage',
