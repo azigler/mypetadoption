@@ -125,11 +125,11 @@ export default {
   feed: [
     {
       path: '/atom.xml',
-      link: 'https://www.mypetadoption.com',
+      link: 'https://pensive-fermat-55a1e3.netlify.com',
       create(feed) {
         feed.options = {
           title: 'My Pet Adoption',
-          link: 'https://www.mypetadoption.com/atom.xml',
+          link: 'https://pensive-fermat-55a1e3.netlify.com/atom.xml',
           description: 'Pet adoption and resource website.'
         }
       },
@@ -153,8 +153,8 @@ export default {
     name: 'My Pet Adoption',
     short_name: 'MPA',
     start_url: '/',
-    /* background_color: '#CEB9F6',
-    theme_color: '#B29ED9', */
+    background_color: '#f7f5b1',
+    theme_color: '#7dc3e6',
     orientation: 'any',
     lang: 'en-US',
     description: 'Pet adoption and resource website.'
@@ -167,7 +167,7 @@ export default {
   sitemap: {
     gzip: true,
     cacheTime: 1000 * 60 * 15,
-    hostname: 'https://www.mypetadoption.com',
+    hostname: 'https://pensive-fermat-55a1e3.netlify.com',
     filter({ routes }) {
       return routes.filter(function(route) {
         if (
