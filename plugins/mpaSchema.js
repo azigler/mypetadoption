@@ -37,7 +37,6 @@ Vue.prototype.$mpaSchema = {
       description: 'Pet adoption and resource website.',
       headline: 'My Pet Adoption',
       image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-      mainEntity: this.AndrewZiglerSchema,
       name: 'Andrew Zigler',
       thumbnailUrl:
         'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
