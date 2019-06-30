@@ -1,8 +1,8 @@
 <template>
   <v-layout align-center justify-center>
-    <v-flex xs12 sm8 md5>
+    <v-flex xs12 sm10 md8>
       <v-card class="elevation-12">
-        <v-img src="/ogmediawhite.png" />
+        <v-img src="/ogmediawhite.png" aspect-ratio="1.91" />
         <v-card-title>
           <h3 class="headline mb-0 titlecase">
             Under Construction
