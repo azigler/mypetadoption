@@ -1,12 +1,12 @@
 <template>
-  <v-container class="under-construction" fill-height>
+  <v-flex class="under-construction">
     <structured-data
       type="WebPage"
       :properties="webPageSchema"
       :schema="$mpaSchema.entireSchema"
     />
     <under-construction />
-  </v-container>
+  </v-flex>
 </template>
 
 <script>

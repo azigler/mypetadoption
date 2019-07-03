@@ -2,7 +2,9 @@
   <v-app class="primary">
     <structured-data type="WebSite" :schema="$mpaSchema.entireSchema" />
     <v-content>
-      <nuxt />
+      <v-container class="under-construction" fill-height>
+        <nuxt />
+      </v-container>
     </v-content>
   </v-app>
 </template>
