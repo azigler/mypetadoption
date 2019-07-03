@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@andrewzigler/head-helper": "^1.0.7",
+    "@andrewzigler/head-helper": "^1.0.8",
     "@andrewzigler/structured-data": "^1.1.6",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/feed": "^1.1.0",
@@ -40,7 +40,7 @@
     "@nuxtjs/eslint-config": "^0.0.1",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
-    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-prettier": "^5.1.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.18.0",
@@ -48,7 +48,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-nuxt": ">=0.4.3",
     "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "nodemon": "^1.19.1",

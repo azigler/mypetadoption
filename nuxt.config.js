@@ -139,14 +139,12 @@ export default {
   ],
 
   vuetify: {
-    treeShake: true
-    /*
+    treeShake: true,
     theme: {
-      primary: '#B29ED9',
-      secondary: '#C7B3BD',
-      accent: '#FFF4F4'
+      primary: '#f7f5b1',
+      secondary: '#7dc3e6',
+      accent: '#0a7324'
     }
-    */
   },
 
   manifest: {

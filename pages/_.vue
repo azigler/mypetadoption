@@ -1,5 +1,5 @@
 <template>
-  <v-container class="under-construction" fluid fill-height>
+  <v-container class="under-construction" fill-height>
     <structured-data
       type="WebPage"
       :properties="webPageSchema"
