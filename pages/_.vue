@@ -6,6 +6,14 @@
       :schema="$mpaSchema.entireSchema"
     />
     <under-construction />
+    <v-badge>{{ $auth.loggedIn ? 'Logged In' : 'Guest' }}</v-badge>
+    <v-btn
+      v-if="!$auth.loggedIn"
+      block
+      class="login-button"
+      @click="$auth.loginWith('auth0')"
+      >Login</v-btn
+    >
   </v-layout>
 </template>
 
@@ -29,7 +37,7 @@ export default {
     )
   },
 
-  asyncData() {
+  asyncData(app) {
     return {
       webPageSchema: {
         ...{

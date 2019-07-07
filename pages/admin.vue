@@ -34,6 +34,7 @@ console.log(test1.blah())
 console.log(myTest.internalBoolean)
 
 export default {
+  middleware: ['auth'],
   head() {
     return {
       meta: [

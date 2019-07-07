@@ -55,7 +55,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
     '@nuxtjs/feed',
     [
@@ -79,8 +79,7 @@ export default {
           }
         }
       }
-    ],
-    'nuxt-basic-auth-module'
+    ]
   ],
   /*
    ** Axios module configuration
@@ -171,23 +170,25 @@ export default {
         if (
           !route.url.endsWith('/') &&
           route.url.length > 1 &&
-          route.url !== '/khnum'
+          route.url !== '/admin'
         ) {
           return (route.url = `${route.url}/`)
-        } else if (route.url !== '/khnum') {
+        } else if (route.url !== '/admin') {
           return route
         }
       })
     }
   },
 
-  basic: {
-    name: 'thedogdays',
-    pass: 'areover!',
-    match: function(req) {
-      if (req.url === '/khnum') {
-        return true
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'mypetadoption.auth0.com',
+        client_id: '24ZuFqsddywamCHeCHNcRbvY4vJQpyLA'
       }
+    },
+    redirect: {
+      callback: '/login/redirect'
     }
   }
 }
