@@ -19,6 +19,7 @@
 
 <script>
 import StructuredData from '@andrewzigler/structured-data'
+import jwtDecode from 'jwt-decode'
 import UnderConstruction from '~/components/UnderConstruction'
 
 export default {
@@ -38,6 +39,19 @@ export default {
   },
 
   asyncData(app) {
+    /* eslint-disable */
+    let cookie, newUser
+    if (app.req && app.req.headers.cookie.includes(';') && !app.req.headers.cookie.includes('auth._token.auth0=false')) {
+      console.log(app.req.headers.cookie)
+      cookie = app.req.headers.cookie.split(';').find(function(item) {
+        return item.includes('auth._token.auth0')
+      })
+      console.log(jwtDecode(cookie.split('=')[1]))
+      newUser = jwtDecode(cookie.split('=')[1])
+      app.store.commit('SET_USER', newUser)
+      app.$auth.setToken('auth0', cookie.split('=')[1])
+    }
+
     return {
       webPageSchema: {
         ...{
