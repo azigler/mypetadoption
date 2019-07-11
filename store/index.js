@@ -1,10 +1,3 @@
 export const state = () => ({
-  debug: true,
-  user: null
+  debug: true
 })
-
-export const mutations = {
-  SET_USER(state, user) {
-    state.user = user || null
-  }
-}

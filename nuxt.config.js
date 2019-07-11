@@ -1,7 +1,63 @@
 export default {
-  /*
-   ** Headers of the page
-   */
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'mypetadoption.auth0.com',
+        client_id: '24ZuFqsddywamCHeCHNcRbvY4vJQpyLA'
+      }
+    },
+    redirect: {
+      callback: '/login/redirect'
+    }
+  },
+
+  axios: {},
+
+  build: {
+    extend(config, ctx) {
+      // run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    },
+    optimization: {
+      splitChunks: {
+        maxSize: 244000
+      }
+    },
+    transpile: ['@andrewzigler/head-helper']
+  },
+
+  css: ['~/assets/style.styl'],
+
+  feed: [
+    {
+      path: '/atom.xml',
+      link: 'https://pensive-fermat-55a1e3.netlify.com',
+      create(feed) {
+        feed.options = {
+          title: 'My Pet Adoption',
+          link: 'https://pensive-fermat-55a1e3.netlify.com/atom.xml',
+          description: 'Pet adoption and resource website.'
+        }
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'atom1'
+    }
+  ],
+
+  generate: {
+    fallback: true,
+    routes: () => {
+      return ['/']
+    }
+  },
+
   head: {
     titleTemplate: '%s - My Pet Adoption',
     meta: [
@@ -32,28 +88,23 @@ export default {
     ]
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
+  icon: {
+    iconFileName: 'symbol512black.png'
+  },
 
-  /*
-   ** Global CSS
-   */
-  css: ['~/assets/style.styl'],
+  loading: false,
 
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [
-    { src: '~/plugins/persistedState.js', mode: 'client' },
-    '~/plugins/mpaMeta.js',
-    '~/plugins/mpaSchema.js'
-  ],
+  manifest: {
+    name: 'My Pet Adoption',
+    short_name: 'MPA',
+    start_url: '/',
+    background_color: '#f7f5b1',
+    theme_color: '#7dc3e6',
+    orientation: 'any',
+    lang: 'en-US',
+    description: 'Pet adoption and resource website.'
+  },
 
-  /*
-   ** Nuxt.js modules
-   */
   modules: [
     '@nuxtjs/auth',
     '@nuxtjs/axios',
@@ -71,7 +122,7 @@ export default {
     [
       'prismic-nuxt',
       {
-        endpoint: 'https://andrewzigler.cdn.prismic.io/api/v2', // FIX
+        endpoint: 'https://mypetadoption.cdn.prismic.io/api/v2',
         deferLoad: true,
         linkResolver: function(doc) {
           if (doc.isBroken) {
@@ -81,61 +132,33 @@ export default {
       }
     ]
   ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
 
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
-    optimization: {
-      splitChunks: {
-        maxSize: 244000
-      }
-    },
-    transpile: ['@andrewzigler/head-helper']
-  },
-
-  generate: {
-    fallback: true,
-    routes: () => {
-      return ['/']
-    }
-  },
-
-  feed: [
-    {
-      path: '/atom.xml',
-      link: 'https://pensive-fermat-55a1e3.netlify.com',
-      create(feed) {
-        feed.options = {
-          title: 'My Pet Adoption',
-          link: 'https://pensive-fermat-55a1e3.netlify.com/atom.xml',
-          description: 'Pet adoption and resource website.'
-        }
-      },
-      cacheTime: 1000 * 60 * 15,
-      type: 'atom1'
-    }
+  plugins: [
+    { src: '~/plugins/persistedState.js', mode: 'client' },
+    '~/plugins/mpaMeta.js',
+    '~/plugins/mpaSchema.js'
   ],
+
+  sitemap: {
+    gzip: true,
+    cacheTime: 1000 * 60 * 15,
+    hostname: 'https://pensive-fermat-55a1e3.netlify.com',
+    filter({ routes }) {
+      const hiddenRoutes = ['/admin']
+
+      return routes.filter(function(route) {
+        if (
+          !route.url.endsWith('/') &&
+          route.url !== '/' &&
+          !hiddenRoutes.includes(route.url)
+        ) {
+          return (route.url = `${route.url}/`)
+        } else if (!hiddenRoutes.includes(route.url)) {
+          return route
+        }
+      })
+    }
+  },
 
   vuetify: {
     treeShake: true,
@@ -143,52 +166,6 @@ export default {
       primary: '#f7f5b1',
       secondary: '#7dc3e6',
       accent: '#0a7324'
-    }
-  },
-
-  manifest: {
-    name: 'My Pet Adoption',
-    short_name: 'MPA',
-    start_url: '/',
-    background_color: '#f7f5b1',
-    theme_color: '#7dc3e6',
-    orientation: 'any',
-    lang: 'en-US',
-    description: 'Pet adoption and resource website.'
-  },
-
-  icon: {
-    iconFileName: 'symbol512black.png'
-  },
-
-  sitemap: {
-    gzip: true,
-    cacheTime: 1000 * 60 * 15,
-    hostname: 'https://pensive-fermat-55a1e3.netlify.com',
-    filter({ routes }) {
-      return routes.filter(function(route) {
-        if (
-          !route.url.endsWith('/') &&
-          route.url.length > 1 &&
-          route.url !== '/admin'
-        ) {
-          return (route.url = `${route.url}/`)
-        } else if (route.url !== '/admin') {
-          return route
-        }
-      })
-    }
-  },
-
-  auth: {
-    strategies: {
-      auth0: {
-        domain: 'mypetadoption.auth0.com',
-        client_id: '24ZuFqsddywamCHeCHNcRbvY4vJQpyLA'
-      }
-    },
-    redirect: {
-      callback: '/login/redirect'
     }
   }
 }
