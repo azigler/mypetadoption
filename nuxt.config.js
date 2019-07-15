@@ -163,8 +163,8 @@ export default {
   vuetify: {
     treeShake: true,
     theme: {
-      primary: '#f7f5b1',
-      secondary: '#7dc3e6',
+      primary: '#7dc3e6',
+      secondary: '#f7f5b1',
       accent: '#0a7324'
     }
   }
