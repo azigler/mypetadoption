@@ -8,7 +8,8 @@ export default {
     },
     redirect: {
       callback: '/login/redirect'
-    }
+    },
+    watchLoggedIn: false
   },
 
   axios: {},
