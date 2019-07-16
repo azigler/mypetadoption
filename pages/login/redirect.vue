@@ -32,14 +32,10 @@ export default {
     // schedule a redirect depending on authentication results
     setTimeout(() => {
       // only redirect if the user is still here
-      if (this.$route.path === '/login/redirect') {
-        /* eslint-disable */
-        console.log(this.$route.path)
+      if (this.$route.path.includes('/login/redirect')) {
         if (!this.$auth.user) {
-          console.log('no user')
           this.$router.push('/login')
         } else {
-          console.log('else')
           this.$router.push('/')
         }
       }
