@@ -1,12 +1,17 @@
 <template>
   <v-layout class="login-redirect" align-center justify-center>
+    <structured-data
+      type="WebPage"
+      :properties="webPageSchema"
+      :schema="$mpaSchema.entireSchema"
+    />
     <v-card class="primary lighten-1">
       <v-container>
         <p class="display-1 inline font-weight-bold">Logging in</p>
         <div class="ellipsis inline">
-          <v-icon>pets</v-icon>
-          <v-icon>pets</v-icon>
-          <v-icon>pets</v-icon>
+          <v-icon color="black">pets</v-icon>
+          <v-icon color="black">pets</v-icon>
+          <v-icon color="black">pets</v-icon>
         </div>
       </v-container>
     </v-card>
@@ -14,8 +19,31 @@
 </template>
 
 <script>
+import StructuredData from '@andrewzigler/structured-data'
+
 export default {
+  components: {
+    StructuredData
+  },
+
   layout: 'noToolbar',
+
+  asyncData(app) {
+    return {
+      webPageSchema: {
+        ...{
+          description:
+            'MyPetAdoption.com, an upcoming pet adoption and resource website, is under construction.',
+          headline: 'Logging In',
+          image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          name: 'Logging In',
+          thumbnailUrl:
+            'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          url: 'https://pensive-fermat-55a1e3.netlify.com/'
+        }
+      }
+    }
+  },
 
   mounted() {
     // manually save token from URL hash for SSR
@@ -40,6 +68,25 @@ export default {
         }
       }
     }, 1.5 * 1000)
+  },
+
+  head() {
+    return {
+      ...this.$mpaMeta.getBaseHead(
+        'Logging in',
+        'My Pet Adoption',
+        'Logging in to MyPetAdoption.com, a pet adoption and resource website.',
+        'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+        'https://pensive-fermat-55a1e3.netlify.com/login/redirect/'
+      ),
+      meta: [
+        {
+          name: 'robots',
+          hid: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -67,7 +114,6 @@ p {
 
 .v-icon {
   font-size: 0.9rem;
-  color: black;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
 

@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="admin" align-center justify-center>
+  <v-layout class="profile" align-center justify-center>
     <structured-data
       type="WebPage"
       :properties="webPageSchema"
@@ -7,7 +7,7 @@
     />
     <div>hi:{{ given_name }}</div>
     <h1 class="title">
-      mypetadoption
+      PROFILE
     </h1>
     <h2 class="subtitle">
       Pet adoption and resource website.
@@ -47,11 +47,11 @@ export default {
   head() {
     return {
       ...this.$mpaMeta.getBaseHead(
-        'Admin',
+        'Profile',
         'My Pet Adoption',
-        'An administrator-only debugging area.',
+        'Your profile on MyPetAdoption.com, a pet adoption and resource website.',
         'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-        'https://pensive-fermat-55a1e3.netlify.com/admin/'
+        'https://pensive-fermat-55a1e3.netlify.com/profile/'
       ),
       meta: [
         {
@@ -76,13 +76,13 @@ export default {
       webPageSchema: {
         ...{
           description:
-            'An administrator-only debugging area.',
-          headline: 'Admin',
+            'Your profile on MyPetAdoption.com, a pet adoption and resource website.',
+          headline: 'Profile',
           image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          name: 'Admin',
+          name: 'Profile',
           thumbnailUrl:
             'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          url: 'https://pensive-fermat-55a1e3.netlify.com/admin/'
+          url: 'https://pensive-fermat-55a1e3.netlify.com/profile/'
         }
       }
     }

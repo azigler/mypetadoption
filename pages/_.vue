@@ -1,30 +1,29 @@
 <template>
-  <v-layout class="under-construction">
+  <v-layout class="under-construction" align-center justify-center>
     <structured-data
       type="WebPage"
       :properties="webPageSchema"
       :schema="$mpaSchema.entireSchema"
     />
-    <under-construction />
-    <v-badge>{{ $auth.loggedIn ? 'Logged In' : 'Guest' }}</v-badge>
-    <v-btn
-      v-if="!$auth.loggedIn"
-      block
-      class="login-button"
-      @click="$auth.loginWith('auth0')"
-      >Login</v-btn
-    >
+    <v-flex xs12 sm10 md8>
+      <v-card class="elevation-12">
+        <v-img src="/ogmediawhite.png" aspect-ratio="1.91" />
+        <v-card-title>
+          <h3 class="headline mb-0 titlecase">
+            Under Construction
+          </h3>
+        </v-card-title>
+      </v-card>
+    </v-flex>
   </v-layout>
 </template>
 
 <script>
 import StructuredData from '@andrewzigler/structured-data'
-import UnderConstruction from '~/components/UnderConstruction'
 
 export default {
   components: {
-    StructuredData,
-    UnderConstruction
+    StructuredData
   },
 
   asyncData(app) {
@@ -55,3 +54,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.v-image {
+  background-color: #7dc3e6;
+}
+
+.elevation-12 {
+  border-radius: 8px;
+}
+
+.titlecase {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto;
+  color: #0f3a50;
+  font-weight: bold;
+}
+</style>
