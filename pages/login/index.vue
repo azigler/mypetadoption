@@ -6,17 +6,20 @@
       :schema="$mpaSchema.entireSchema"
     />
     <v-flex xs6>
-      <v-img src="/ogmediablack.png" aspect-ratio="1.91" />
-      <v-layout column>
-        <v-btn
-          color="primary lighten-1"
-          class="font-weight-bold"
-          large
-          @click="$auth.loginWith('auth0')"
-        >
-          Log in
-        </v-btn>
-      </v-layout>
+      <v-card elevation="24" tile>
+        <v-img src="/ogmediablack.png" aspect-ratio="1.91" />
+        <v-layout column>
+          <v-btn
+            color="primary lighten-1"
+            class="font-weight-bold login-button"
+            depressed
+            block
+            @click="$auth.loginWith('auth0')"
+          >
+            <h1>Log in</h1>
+          </v-btn>
+        </v-layout>
+      </v-card>
     </v-flex>
   </v-layout>
 </template>
@@ -49,9 +52,15 @@ export default {
   },
 
   mounted() {
-    if (this.$auth.loggedIn) {
-      this.$router.push('/')
-    }
+    // schedule a redirect depending on login status
+    setTimeout(() => {
+      // only redirect if a logged-in user is lingering here
+      if (this.$route.path.includes('/login')) {
+        if (this.$auth.user) {
+          this.$router.push('/')
+        }
+      }
+    }, 1.5 * 1000)
   },
 
   head() {
@@ -71,8 +80,9 @@ export default {
   margin-bottom: -1.5rem;
 }
 
-.v-btn {
-  border-radius: 0.5rem !important;
+.v-btn.login-button {
+  margin-bottom: 0;
+  border-radius: 0;
 }
 
 #app {

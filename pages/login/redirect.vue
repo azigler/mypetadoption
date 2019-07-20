@@ -5,7 +5,7 @@
       :properties="webPageSchema"
       :schema="$mpaSchema.entireSchema"
     />
-    <v-card class="primary lighten-1">
+    <v-card color="primary lighten-1" elevation="24" tile>
       <v-container>
         <p class="display-1 inline font-weight-bold">Logging in</p>
         <div class="ellipsis inline">
@@ -97,7 +97,7 @@ p {
 }
 
 .container {
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2.75rem;
 }
 
 .ellipsis {
@@ -106,10 +106,6 @@ p {
 
 .inline {
   display: inline-block;
-}
-
-.v-card {
-  border-radius: 0.5rem;
 }
 
 .v-icon {

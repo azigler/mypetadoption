@@ -145,7 +145,7 @@ export default {
     cacheTime: 1000 * 60 * 15,
     hostname: 'https://pensive-fermat-55a1e3.netlify.com',
     filter({ routes }) {
-      const hiddenRoutes = ['/admin']
+      const hiddenRoutes = ['/admin', '/login/redirect']
 
       return routes.filter(function(route) {
         if (

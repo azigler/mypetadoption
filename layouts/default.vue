@@ -3,6 +3,7 @@
     <structured-data type="WebSite" :schema="$mpaSchema.entireSchema" />
     <v-toolbar app class="top-toolbar" height="50">
       <v-btn
+        v-show="$vuetify.breakpoint.smAndUp"
         color="primary lighten-1"
         class="font-weight-bold"
         depressed
@@ -13,7 +14,18 @@
         Home
       </v-btn>
       <v-btn
-        v-if="isAdmin"
+        v-show="$vuetify.breakpoint.xsOnly"
+        color="primary lighten-1"
+        class="toolbar-icon-button"
+        depressed
+        small
+        nuxt
+        to="/"
+      >
+        <v-icon>home</v-icon>
+      </v-btn>
+      <v-btn
+        v-show="$vuetify.breakpoint.smAndUp && isAdmin"
         color="primary lighten-1"
         class="font-weight-bold"
         depressed
@@ -23,9 +35,20 @@
       >
         Admin
       </v-btn>
+      <v-btn
+        v-show="$vuetify.breakpoint.xsOnly && isAdmin"
+        color="primary lighten-1"
+        class="toolbar-icon-button"
+        depressed
+        small
+        nuxt
+        to="/admin"
+      >
+        <v-icon>code</v-icon>
+      </v-btn>
       <v-spacer />
       <v-btn
-        v-if="!$auth.loggedIn"
+        v-show="$vuetify.breakpoint.smAndUp && !$auth.loggedIn"
         color="primary lighten-1"
         class="font-weight-bold"
         depressed
@@ -35,7 +58,17 @@
         Log in
       </v-btn>
       <v-btn
-        v-if="$auth.loggedIn"
+        v-show="$vuetify.breakpoint.xsOnly && !$auth.loggedIn"
+        color="primary lighten-1"
+        class="toolbar-icon-button"
+        depressed
+        small
+        @click="$auth.loginWith('auth0')"
+      >
+        <v-icon>open_in_browser</v-icon>
+      </v-btn>
+      <v-btn
+        v-show="$vuetify.breakpoint.smAndUp && $auth.loggedIn"
         color="primary lighten-1"
         class="font-weight-bold"
         small
@@ -43,10 +76,21 @@
         nuxt
         to="/profile"
       >
-        {{ $auth.user.given_name }}
+        {{ givenName }}
         <v-icon small class="profile-face-icon">face</v-icon>
       </v-btn>
-      <v-icon v-if="$auth.loggedIn" color="primary darken-3" @click="logout"
+      <v-btn
+        v-show="$vuetify.breakpoint.xsOnly && $auth.loggedIn"
+        color="primary lighten-1"
+        class="toolbar-icon-button"
+        depressed
+        small
+        nuxt
+        to="/profile"
+      >
+        <v-icon>face</v-icon>
+      </v-btn>
+      <v-icon v-show="$auth.loggedIn" color="primary darken-3" @click="logout"
         >exit_to_app</v-icon
       >
     </v-toolbar>
@@ -66,16 +110,33 @@ export default {
     StructuredData
   },
 
+  data(app) {
+    return {
+      givenName: app.$auth.user
+        ? app.$auth.user.given_name
+          ? app.$auth.user.given_name
+          : app.$auth.user.email
+        : ''
+    }
+  },
+
   computed: {
     isAdmin(app) {
       if (
         app.$auth.user &&
+        app.$auth.user['https://www.mypetadoption.com/app_metadata'] &&
         app.$auth.user['https://www.mypetadoption.com/app_metadata'].admin
       ) {
         return true
       } else {
         return false
       }
+    }
+  },
+
+  asyncData(app) {
+    return {
+      givenName: app.$auth.user ? app.$auth.user.given_name : ''
     }
   },
 
@@ -94,16 +155,21 @@ export default {
 <style lang="scss">
 html {
   overscroll-behavior: none;
-}
-
-.v-btn {
-  color: rgba(0, 0, 0, 0.72) !important;
-  text-transform: initial !important;
+  overflow: auto;
 }
 
 .top-toolbar {
   .v-toolbar__content {
     padding: 0 0.8rem;
+
+    .v-btn {
+      color: rgba(0, 0, 0, 0.72) !important;
+      text-transform: initial !important;
+    }
+
+    .toolbar-icon-button {
+      min-width: 2.5rem !important;
+    }
 
     .profile-face-icon {
       padding-left: 0.3rem;
