@@ -7,7 +7,8 @@ export default {
       }
     },
     redirect: {
-      callback: '/login/redirect'
+      callback: '/login/redirect',
+      home: '/profile'
     },
     watchLoggedIn: false
   },
@@ -145,7 +146,7 @@ export default {
     cacheTime: 1000 * 60 * 15,
     hostname: 'https://pensive-fermat-55a1e3.netlify.com',
     filter({ routes }) {
-      const hiddenRoutes = ['/admin', '/login/redirect']
+      const hiddenRoutes = ['/admin', '/login/redirect', '/profile']
 
       return routes.filter(function(route) {
         if (

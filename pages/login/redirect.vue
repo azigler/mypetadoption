@@ -64,7 +64,7 @@ export default {
         if (!this.$auth.user) {
           this.$router.push('/login')
         } else {
-          this.$router.push('/')
+          this.$router.push('/profile')
         }
       }
     }, 1.5 * 1000)

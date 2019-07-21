@@ -22,7 +22,7 @@
         nuxt
         to="/"
       >
-        <v-icon>home</v-icon>
+        <v-img src="/symbol512black.png" aspect-ratio="1" width="16" />
       </v-btn>
       <v-btn
         v-show="$vuetify.breakpoint.smAndUp && isAdmin"
@@ -88,7 +88,7 @@
         nuxt
         to="/profile"
       >
-        <v-icon>face</v-icon>
+        <v-icon size="20">face</v-icon>
       </v-btn>
       <v-icon v-show="$auth.loggedIn" color="primary darken-3" @click="logout"
         >exit_to_app</v-icon
@@ -99,6 +99,17 @@
         <nuxt />
       </v-container>
     </v-content>
+    <v-footer color="secondary">
+      <v-layout justify-center>
+        <v-img src="/ogmediablack.png" aspect-ratio="1.91" max-width="60" />
+        <span class="links">
+          <nuxt-link to="/blog">Blog</nuxt-link> <span>&nbsp;|&nbsp;</span>
+          <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
+          <span>&nbsp;|&nbsp;</span>
+          <nuxt-link to="/terms-of-use">Terms of Use</nuxt-link>
+        </span>
+      </v-layout>
+    </v-footer>
   </v-app>
 </template>
 
@@ -169,11 +180,28 @@ html {
 
     .toolbar-icon-button {
       min-width: 2.5rem !important;
+
+      .v-image__image {
+        opacity: 0.75;
+      }
     }
 
     .profile-face-icon {
       padding-left: 0.3rem;
     }
+  }
+}
+
+footer {
+  display: none !important;
+
+  a,
+  span {
+    align-self: center;
+  }
+
+  .links {
+    margin-left: 0.5rem;
   }
 }
 </style>

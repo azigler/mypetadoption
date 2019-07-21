@@ -57,7 +57,7 @@ export default {
       // only redirect if a logged-in user is lingering here
       if (this.$route.path.includes('/login')) {
         if (this.$auth.user) {
-          this.$router.push('/')
+          this.$router.push('/profile')
         }
       }
     }, 1.5 * 1000)
@@ -76,13 +76,15 @@ export default {
 </script>
 
 <style lang="scss">
-.v-image {
-  margin-bottom: -1.5rem;
-}
+.login {
+  .v-image {
+    margin-bottom: -1.5rem;
+  }
 
-.v-btn.login-button {
-  margin-bottom: 0;
-  border-radius: 0;
+  .v-btn.login-button {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
 }
 
 #app {
