@@ -103,7 +103,7 @@ export default {
     return this.$mpaMeta.getBaseHead(
       'Under Maintenance',
       'My Pet Adoption',
-      'MyPetAdoption.com, a pet adoption and resource website, is under maintenance.',
+      'My Pet Adoption, a pet adoption and resource website, is under maintenance.',
       'https://www.mypetadoption.com/ogmediablack.png',
       'https://www.mypetadoption.com/'
     )
