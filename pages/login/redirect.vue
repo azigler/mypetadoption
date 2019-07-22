@@ -33,7 +33,7 @@ export default {
       webPageSchema: {
         ...{
           description:
-            'MyPetAdoption.com, an upcoming pet adoption and resource website, is under construction.',
+            'Logging in to My Pet Adoption, a pet adoption and resource website.',
           headline: 'Logging In',
           image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
           name: 'Logging In',
