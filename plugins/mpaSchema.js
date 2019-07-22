@@ -36,11 +36,10 @@ Vue.prototype.$mpaSchema = {
       creator: this.AndrewZiglerSchema,
       description: 'Pet adoption and resource website.',
       headline: 'My Pet Adoption',
-      image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+      image: 'https://www.mypetadoption.com/ogmediablack.png',
       name: 'Andrew Zigler',
-      thumbnailUrl:
-        'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-      url: 'https://pensive-fermat-55a1e3.netlify.com/'
+      thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
+      url: 'https://www.mypetadoption.com/'
     }
   },
 

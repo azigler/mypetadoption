@@ -40,11 +40,11 @@ export default {
   feed: [
     {
       path: '/atom.xml',
-      link: 'https://pensive-fermat-55a1e3.netlify.com',
+      link: 'https://www.mypetadoption.com',
       create(feed) {
         feed.options = {
           title: 'My Pet Adoption',
-          link: 'https://pensive-fermat-55a1e3.netlify.com/atom.xml',
+          link: 'https://www.mypetadoption.com/atom.xml',
           description: 'Pet adoption and resource website.'
         }
       },
@@ -75,7 +75,7 @@ export default {
       {
         name: 'og:image',
         hid: 'og:image',
-        content: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png'
+        content: 'https://www.mypetadoption.com/ogmediablack.png'
       },
       {
         name: 'twitter:card',
@@ -144,7 +144,7 @@ export default {
   sitemap: {
     gzip: true,
     cacheTime: 1000 * 60 * 15,
-    hostname: 'https://pensive-fermat-55a1e3.netlify.com',
+    hostname: 'https://www.mypetadoption.com',
     filter({ routes }) {
       const hiddenRoutes = ['/admin', '/login/redirect', '/profile']
 
