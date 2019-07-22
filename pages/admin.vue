@@ -50,8 +50,8 @@ export default {
         'Admin',
         'My Pet Adoption',
         'An administrator-only debugging area.',
-        'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-        'https://pensive-fermat-55a1e3.netlify.com/admin/'
+        'https://www.mypetadoption.com/ogmediablack.png',
+        'https://www.mypetadoption.com/admin/'
       ),
       meta: [
         {
@@ -78,11 +78,11 @@ export default {
           description:
             'An administrator-only debugging area.',
           headline: 'Admin',
-          image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          image: 'https://www.mypetadoption.com/ogmediablack.png',
           name: 'Admin',
           thumbnailUrl:
-            'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          url: 'https://pensive-fermat-55a1e3.netlify.com/admin/'
+            'https://www.mypetadoption.com/ogmediablack.png',
+          url: 'https://www.mypetadoption.com/admin/'
         }
       }
     }

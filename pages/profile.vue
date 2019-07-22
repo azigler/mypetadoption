@@ -113,8 +113,8 @@ export default {
         'Your Profile',
         'My Pet Adoption',
         'Your profile on My Pet Adoption, a pet adoption and resource website.',
-        'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-        'https://pensive-fermat-55a1e3.netlify.com/profile/'
+        'https://www.mypetadoption.com/ogmediablack.png',
+        'https://www.mypetadoption.com/profile/'
       ),
       meta: [
         {
@@ -171,11 +171,10 @@ export default {
           description:
             'Your profile on My Pet Adoption, a pet adoption and resource website.',
           headline: 'Your Profile',
-          image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          image: 'https://www.mypetadoption.com/ogmediablack.png',
           name: 'Your Profile',
-          thumbnailUrl:
-            'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          url: 'https://pensive-fermat-55a1e3.netlify.com/profile/'
+          thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
+          url: 'https://www.mypetadoption.com/profile/'
         }
       }
     }

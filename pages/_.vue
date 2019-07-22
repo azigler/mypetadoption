@@ -90,11 +90,10 @@ export default {
           description:
             'My Pet Adoption, a pet adoption and resource website, is under maintenance.',
           headline: 'Under Maintenance',
-          image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          image: 'https://www.mypetadoption.com/ogmediablack.png',
           name: 'Under Maintenance',
-          thumbnailUrl:
-            'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          url: 'https://pensive-fermat-55a1e3.netlify.com/'
+          thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
+          url: 'https://www.mypetadoption.com/'
         }
       }
     }
@@ -105,8 +104,8 @@ export default {
       'Under Maintenance',
       'My Pet Adoption',
       'MyPetAdoption.com, a pet adoption and resource website, is under maintenance.',
-      'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-      'https://pensive-fermat-55a1e3.netlify.com/'
+      'https://www.mypetadoption.com/ogmediablack.png',
+      'https://www.mypetadoption.com/'
     )
   }
 }

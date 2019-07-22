@@ -41,11 +41,10 @@ export default {
           description:
             'Log in to My Pet Adoption, a pet adoption and resource website.',
           headline: 'Login',
-          image: 'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
+          image: 'https://www.mypetadoption.com/ogmediablack.png',
           name: 'Login',
-          thumbnailUrl:
-            'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-          url: 'https://pensive-fermat-55a1e3.netlify.com/login/'
+          thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
+          url: 'https://www.mypetadoption.com/login/'
         }
       }
     }
@@ -68,8 +67,8 @@ export default {
       'Login',
       'My Pet Adoption',
       'Log in to MyPetAdoption.com, a pet adoption and resource website.',
-      'https://pensive-fermat-55a1e3.netlify.com/ogmediablack.png',
-      'https://pensive-fermat-55a1e3.netlify.com/login/'
+      'https://www.mypetadoption.com/ogmediablack.png',
+      'https://www.mypetadoption.com/login/'
     )
   }
 }
