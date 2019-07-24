@@ -169,6 +169,16 @@ html {
   overflow: auto;
 }
 
+#app {
+  background-color: #f7f5b1 !important;
+  border-color: #f7f5b1 !important;
+
+  .primary.lighten-1 {
+    background-color: #99dfff !important;
+    border-color: #99dfff !important;
+  }
+}
+
 .top-toolbar {
   .v-toolbar__content {
     padding: 0 0.8rem;

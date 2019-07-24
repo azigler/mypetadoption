@@ -85,14 +85,4 @@ export default {
     border-radius: 0;
   }
 }
-
-#app {
-  background-color: #f7f5b1 !important;
-  border-color: #f7f5b1 !important;
-
-  .primary.lighten-1 {
-    background-color: #99dfff !important;
-    border-color: #99dfff !important;
-  }
-}
 </style>
