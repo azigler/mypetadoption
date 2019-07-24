@@ -7,7 +7,7 @@ export default {
       }
     },
     redirect: {
-      callback: '/login/redirect',
+      callback: '/login/redirect/',
       home: '/profile'
     },
     watchLoggedIn: false
