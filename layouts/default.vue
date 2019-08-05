@@ -103,7 +103,8 @@
       <v-layout justify-center>
         <v-img src="/ogmediablack.png" aspect-ratio="1.91" max-width="60" />
         <span class="links">
-          <nuxt-link to="/blog">Blog</nuxt-link> <span>&nbsp;|&nbsp;</span>
+          <nuxt-link to="/blog" class="hidden">Blog</nuxt-link>
+          <span class="hidden">&nbsp;|&nbsp;</span>
           <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
           <span>&nbsp;|&nbsp;</span>
           <nuxt-link to="/terms-of-use">Terms of Use</nuxt-link>
@@ -168,6 +169,45 @@ html {
   overscroll-behavior: none;
   overflow: auto;
 }
+
+.hidden {
+  display: none;
+}
+
+.top-toolbar {
+  .v-toolbar__content {
+    padding: 0 0.8rem;
+
+    .v-btn {
+      color: rgba(0, 0, 0, 0.72) !important;
+      text-transform: initial !important;
+    }
+
+    .toolbar-icon-button {
+      min-width: 2.5rem !important;
+
+      .v-image__image {
+        opacity: 0.75;
+      }
+    }
+
+    .profile-face-icon {
+      padding-left: 0.3rem;
+    }
+  }
+}
+
+footer {
+  a,
+  span {
+    align-self: center;
+  }
+
+  .links {
+    margin-left: 0.5rem;
+  }
+}
+
 .primary {
   background-color: #7dc3e6 !important;
   border-color: #7dc3e6 !important;
@@ -407,41 +447,5 @@ html {
 .accent--text.text--darken-4 {
   color: #001c00 !important;
   caret-color: #001c00 !important;
-}
-
-.top-toolbar {
-  .v-toolbar__content {
-    padding: 0 0.8rem;
-
-    .v-btn {
-      color: rgba(0, 0, 0, 0.72) !important;
-      text-transform: initial !important;
-    }
-
-    .toolbar-icon-button {
-      min-width: 2.5rem !important;
-
-      .v-image__image {
-        opacity: 0.75;
-      }
-    }
-
-    .profile-face-icon {
-      padding-left: 0.3rem;
-    }
-  }
-}
-
-footer {
-  display: none !important;
-
-  a,
-  span {
-    align-self: center;
-  }
-
-  .links {
-    margin-left: 0.5rem;
-  }
 }
 </style>
