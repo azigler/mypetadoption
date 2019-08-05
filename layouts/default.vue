@@ -116,6 +116,14 @@
 
 <script>
 import StructuredData from '@andrewzigler/structured-data'
+const PRISMIC_API_URL = 'https://mypetadoption.cdn.prismic.io/api/v2'
+
+async function fetchMasterRef() {
+  const { refs } = await fetch(PRISMIC_API_URL).then(function(response) {
+    return response.json()
+  })
+  return refs[0].ref
+}
 
 export default {
   components: {
@@ -146,6 +154,10 @@ export default {
     }
   },
 
+  watch: {
+    $route: 'fetchData'
+  },
+
   asyncData(app) {
     return {
       givenName: app.$auth.user ? app.$auth.user.given_name : ''
@@ -153,6 +165,16 @@ export default {
   },
 
   methods: {
+    async fetchData() {
+      if (
+        (await fetchMasterRef()) !== this.$store.getters.masterRef &&
+        this.$store.getters.masterRef.length !== 0
+      ) {
+        this.$store.dispatch('fetchMasterRef')
+        this.$router.go()
+      }
+    },
+
     logout() {
       this.$auth.logout()
       window.location.href = `https://mypetadoption.auth0.com/v2/logout?returnTo=${location.protocol.substr(

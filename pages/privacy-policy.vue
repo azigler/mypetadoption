@@ -12,7 +12,7 @@
       <v-card tile elevation="12">
         <v-card-title>
           <h1
-            class="title text-xs-center mx-auto"
+            class="display-2 text-xs-center mx-auto"
             v-html="
               $prismic.dom.RichText.asText(
                 page.data.title,
@@ -21,17 +21,16 @@
             "
           />
         </v-card-title>
-        <v-card-text class="subheading">
-          <div
-            class="terms-of-use"
-            v-html="
-              $prismic.dom.RichText.asHtml(
-                page.data.body,
-                $prismic.linkResolver,
-                $prismic.htmlSerializer
-              )
-            "
-          />
+        <v-card-text
+          class="terms-of-use"
+          v-html="
+            $prismic.dom.RichText.asHtml(
+              page.data.body,
+              $prismic.linkResolver,
+              $prismic.htmlSerializer
+            )
+          "
+        >
         </v-card-text>
       </v-card>
     </v-flex>
