@@ -57,13 +57,12 @@ export default {
       page,
       webPageSchema: {
         ...{
-          description:
-            'My Pet Adoption, a pet adoption and resource website, is under maintenance.',
-          headline: 'Under Maintenance',
+          description: 'The terms of use for My Pet Adoption.',
+          headline: 'Terms of Use',
           image: 'https://www.mypetadoption.com/ogmediablack.png',
-          name: 'Under Maintenance',
+          name: 'Terms of Use',
           thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
-          url: 'https://www.mypetadoption.com/'
+          url: 'https://www.mypetadoption.com/terms-of-use'
         }
       }
     }
@@ -71,11 +70,11 @@ export default {
 
   head() {
     return this.$mpaMeta.getBaseHead(
-      'Under Maintenance',
+      'Terms of Use',
       'My Pet Adoption',
-      'My Pet Adoption, a pet adoption and resource website, is under maintenance.',
+      'The terms of use for My Pet Adoption.',
       'https://www.mypetadoption.com/ogmediablack.png',
-      'https://www.mypetadoption.com/'
+      'https://www.mypetadoption.com/terms-of-use'
     )
   }
 }
