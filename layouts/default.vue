@@ -53,7 +53,8 @@
         class="font-weight-bold"
         depressed
         small
-        @click="$auth.loginWith('auth0')"
+        to="login/"
+        nuxt
       >
         Log in
       </v-btn>
@@ -63,7 +64,8 @@
         class="toolbar-icon-button"
         depressed
         small
-        @click="$auth.loginWith('auth0')"
+        to="login/"
+        nuxt
       >
         <v-icon>open_in_browser</v-icon>
       </v-btn>
