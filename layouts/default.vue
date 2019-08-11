@@ -107,9 +107,9 @@
         <span class="links">
           <nuxt-link to="/blog" class="hidden">Blog</nuxt-link>
           <span class="hidden">&nbsp;|&nbsp;</span>
-          <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
-          <span>&nbsp;|&nbsp;</span>
           <nuxt-link to="/terms-of-use">Terms of Use</nuxt-link>
+          <span>&nbsp;|&nbsp;</span>
+          <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
         </span>
       </v-layout>
     </v-footer>

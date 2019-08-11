@@ -18,6 +18,16 @@
     .auth0-lock-header-bg-solid {
       background-color: initial!important;
     }
+
+    .login-agreement {
+      font-size: 0.7rem;
+      width: 12rem;
+      margin: 0 auto;
+    }
+
+    .auth0-lock-content-wrapper {
+      margin-top: -0.5rem;
+    }
   </style>
 
   <!--[if IE 8]>
@@ -86,6 +96,11 @@
     }
 
     lock.show();
+
+    var loginAgreement = document.createElement('p');
+    loginAgreement.innerHTML = "By logging in below, you agree to the <a href='https://www.mypetadoption.com/terms-of-use' target='_blank'>Terms of Use</a> and <a href='https://www.mypetadoption.com/privacy-policy' target='_blank'>Privacy Policy</a>.";
+    loginAgreement.classList.add('login-agreement');
+    document.getElementsByClassName('auth0-lock-header-welcome')[0].appendChild(loginAgreement);
 
   </script>
 </body>
