@@ -130,6 +130,7 @@ export default {
           if (doc.isBroken) {
             return '/404'
           }
+          return doc.uid
         }
       }
     ]

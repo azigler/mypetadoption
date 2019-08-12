@@ -65,8 +65,7 @@
             class="font-weight-bold login-button"
             depressed
             block
-            to="login/"
-            nuxt
+            @click="$auth.loginWith('auth0')"
           >
             Log in now to create your free account!
           </v-btn>

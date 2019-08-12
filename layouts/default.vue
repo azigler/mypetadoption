@@ -53,8 +53,7 @@
         class="font-weight-bold"
         depressed
         small
-        to="login/"
-        nuxt
+        @click="$auth.loginWith('auth0')"
       >
         Log in
       </v-btn>
@@ -64,8 +63,7 @@
         class="toolbar-icon-button"
         depressed
         small
-        to="login/"
-        nuxt
+        @click="$auth.loginWith('auth0')"
       >
         <v-icon>open_in_browser</v-icon>
       </v-btn>
@@ -103,10 +101,10 @@
     </v-content>
     <v-footer color="secondary">
       <v-layout justify-center>
-        <v-img src="/ogmediablack.png" aspect-ratio="1.91" max-width="60" />
+        <nuxt-link to="/"
+          ><v-img src="/ogmediablack.png" aspect-ratio="1.91" width="60"
+        /></nuxt-link>
         <span class="links">
-          <nuxt-link to="/blog" class="hidden">Blog</nuxt-link>
-          <span class="hidden">&nbsp;|&nbsp;</span>
           <nuxt-link to="/terms-of-use">Terms of Use</nuxt-link>
           <span>&nbsp;|&nbsp;</span>
           <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
@@ -194,10 +192,6 @@ html {
   overflow: auto;
 }
 
-.hidden {
-  display: none;
-}
-
 .top-toolbar {
   .v-toolbar__content {
     padding: 0 0.8rem;
@@ -230,6 +224,11 @@ footer {
   .links {
     margin-left: 0.5rem;
   }
+}
+
+.v-btn {
+  color: rgba(0, 0, 0, 0.72) !important;
+  text-transform: initial !important;
 }
 
 .primary {

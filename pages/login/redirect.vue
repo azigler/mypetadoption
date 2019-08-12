@@ -38,7 +38,7 @@ export default {
           image: 'https://www.mypetadoption.com/ogmediablack.png',
           name: 'Logging In',
           thumbnailUrl: 'https://www.mypetadoption.com/ogmediablack.png',
-          url: 'https://www.mypetadoption.com/'
+          url: 'https://www.mypetadoption.com/login/redirect/'
         }
       }
     }

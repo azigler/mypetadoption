@@ -18,14 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-html {
-  overscroll-behavior: none;
-}
-
-.v-btn {
-  color: rgba(0, 0, 0, 0.72) !important;
-  text-transform: initial !important;
-}
-</style>
