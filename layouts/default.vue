@@ -116,14 +116,7 @@
 
 <script>
 import StructuredData from '@andrewzigler/structured-data'
-const PRISMIC_API_URL = 'https://mypetadoption.cdn.prismic.io/api/v2'
-
-async function fetchMasterRef() {
-  const { refs } = await fetch(PRISMIC_API_URL).then(function(response) {
-    return response.json()
-  })
-  return refs[0].ref
-}
+import mpaPrismic from '~/assets/mpaPrismic'
 
 export default {
   components: {
@@ -167,7 +160,7 @@ export default {
   methods: {
     async fetchData() {
       if (
-        (await fetchMasterRef()) !== this.$store.getters.masterRef &&
+        (await mpaPrismic.fetchMasterRef()) !== this.$store.getters.masterRef &&
         this.$store.getters.masterRef.length !== 0
       ) {
         this.$store.dispatch('fetchMasterRef')
@@ -229,6 +222,10 @@ footer {
 .v-btn {
   color: rgba(0, 0, 0, 0.72) !important;
   text-transform: initial !important;
+}
+
+.v-card {
+  border-radius: 0.4rem !important;
 }
 
 .primary {
