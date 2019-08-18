@@ -8,7 +8,8 @@ export default {
     },
     redirect: {
       callback: '/login/redirect/',
-      home: '/profile'
+      home: '/profile/',
+      login: '/login/bounce/'
     },
     watchLoggedIn: false
   },
@@ -147,7 +148,12 @@ export default {
     cacheTime: 1000 * 60 * 15,
     hostname: 'https://www.mypetadoption.com',
     filter({ routes }) {
-      const hiddenRoutes = ['/admin', '/login/redirect', '/profile']
+      const hiddenRoutes = [
+        '/admin',
+        '/login/redirect',
+        '/login/bounce',
+        '/profile'
+      ]
 
       return routes.filter(function(route) {
         if (
